@@ -13,6 +13,9 @@ struct SignupView: View {
     @State private var showPassword: Bool = false
     @State private var errorMessage: String?
     
+    @EnvironmentObject var authViewModel: AuthViewModel
+
+    
     
     var isSignInButtonDisabled: Bool {
         [email, password].contains(where: \.isEmpty)
@@ -84,13 +87,8 @@ struct SignupView: View {
                         .font(.headline)
                         .foregroundColor(.blue)
                     
-                    
-                    
-                    
-                    
                 }
             }
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         }
     }
 }
