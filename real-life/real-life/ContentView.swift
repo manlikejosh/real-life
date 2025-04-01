@@ -2,23 +2,20 @@
 //  ContentView.swift
 //  real-life
 //
-//  Created by Joshua Hodgson on 3/25/25.
+//  Created by Joshua Hodgson on 3/26/25.
 //
 
 import SwiftUI
-
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel // Receive the object
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if authViewModel.user != nil {
+                HomeView()
+            } else {
+                LoginView()
+            }
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
