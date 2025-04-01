@@ -14,9 +14,10 @@ struct SignupView: View {
     @State private var errorMessage: String?
     
     @EnvironmentObject var authViewModel: AuthViewModel
+    
 
     
-    
+    var dickball: Bool = true
     var isSignInButtonDisabled: Bool {
         [email, password].contains(where: \.isEmpty)
     }
